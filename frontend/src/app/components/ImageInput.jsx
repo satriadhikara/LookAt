@@ -88,7 +88,7 @@ const ImageInput = () => {
     formData.append("choice", toggleState ? "texture" : "color");
     var startTime = performance.now();
 
-    fetch("http://127.0.0.1:8000/upload", {
+    fetch("https://lookat-api.vercel.app", {
       method: "POST",
       body: formData,
     })
@@ -189,11 +189,11 @@ const ImageInput = () => {
     const files = e.target.files;
     if (files.length > 999) {
       alert("Please select a maximum of 999 images.");
-      setSelectedDataset(null); 
+      setSelectedDataset(null);
     } else if (files.length > 0) {
       setSelectedDataset(files);
     }
-  };  
+  };
 
   const mirroredStyle = {
     transform: "scaleX(-1)",
