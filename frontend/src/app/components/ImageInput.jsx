@@ -88,7 +88,7 @@ const ImageInput = () => {
     formData.append("choice", toggleState ? "texture" : "color");
     var startTime = performance.now();
 
-    fetch("https://lookat-api.vercel.app", {
+    fetch("https://lookat-api.vercel.app/upload", {
       method: "POST",
       body: formData,
     })
